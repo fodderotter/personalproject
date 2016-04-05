@@ -1,0 +1,29 @@
+<div class="projectsbody container-full">	
+	<div class="col-md-3" id="leftpanel">
+		<div class="projectslist">
+			<a ng-click="show=!show"><button class="addnew btn btn-default"><span class="glyphicon glyphicon-plus"></span></button></a>
+			<label>Start a New Project</label>
+			<form class="newProjectForm animated bounceInLeft" ng-show="show">
+					<input placeholder="Project Title" ng-model="project.title"/>
+					<input placeholder="Project Owner" ng-model="project.owner"/>
+					<input type="date" ng-model="project.doc"/>
+					<textarea placeholder="Description" ng-model="project.description"></textarea>
+					<button type="submit" class="submitform" ng-click="addProject(project)">Let's start!</button>
+			</form>
+			<h4>Ongoing projects</h4>
+			<ul ng-repeat="project in projects track by $index">
+				<li><a ng-click="loadProject(project._id)">{{project.title}}</a></li>				
+			</ul>
+			<h4>Completed projects</h4>
+		</div>		
+	</div>
+	<div class="col-md-9" id="rightpanel">
+		<div class="projectscontent">
+		<ul ng-repeat="task in tasks">
+			<li>{{task.name}}</li>
+			<li>{{task.doc}}</li>
+			<li>{{task.assigned}}</li>
+		</ul>
+		</div>
+	</div>
+</div>

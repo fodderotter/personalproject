@@ -1,0 +1,56 @@
+.homebody {
+	text-align: center;
+/*	background: url(../img/homebg.jpeg) no-repeat center center;*/
+	background-color: #B2FFF8;
+	background-size: cover;
+	height: 95vh;	
+}
+#headline {
+	margin-top: 0px !important; 
+	padding-top: 300px;
+}
+.classgrid{
+	margin: 200px 10vw;
+}
+#descrip{
+	padding-top: 300px;
+	text-align: center;
+}
+.homedescript {
+	height: 90vh;
+}
+#leftpanel {
+	height: 90vh;
+	border-right-color: 1px solid black !important;
+}
+.projectsbody{
+
+}
+.newProjectForm {
+	display:flex;
+	flex-direction: column;
+	width: 200px;
+}
+.submitform{
+	width: 100px;
+}
+.newProjectForm{
+	margin-top: 10px;
+}
+.projectslist{
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.projectscontent{
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.addnew {
+}
+.navbar {
+	background-color: #B2FFF8 !important;
+}
+.testing{
+	height: 100vh;
+	width: 75vw;
+}

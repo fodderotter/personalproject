@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="PMapp">
+<head>
+	<title>prjkt</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="home">PRJKT</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ui-sref="projects">Link</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<ui-view></ui-view>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+<script src="app.js"></script>
+<script src="src/controllers/projectsCtrl.js"></script>
+<script src="src/controllers/homeCtrl.js"></script>
+<script src="src/services/projectsService.js"></script>
+<script src="src/jquery.js"></script>
+</html>

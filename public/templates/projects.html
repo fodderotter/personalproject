@@ -1,5 +1,5 @@
 <div class="projectsbody container-full">	
-	<div class="col-md-3" id="leftpanel">
+	<div class="col-md-2" id="leftpanel">
 		<div class="projectslist">
 			<a ng-click="show=!show"><button class="addnew btn btn-default"><span class="glyphicon glyphicon-plus"></span></button></a>
 			<label>Start a New Project</label>
@@ -10,14 +10,15 @@
 					<textarea placeholder="Description" ng-model="project.description"></textarea>
 					<button type="submit" class="submitform" ng-click="addProject(project)">Let's start!</button>
 			</form>
-			<h4>Ongoing projects</h4>
-			<ul ng-repeat="project in projects track by $index">
+			<h4 id="ongoing">Ongoing projects</h4>
+			<ul ng-repeat="project in projects track by $index" id="listofprojects">
 				<li><a ng-click="loadProject(project._id)">{{project.title}}</a></li>				
 			</ul>
-			<h4>Completed projects</h4>
+			<h4 id="completed">Completed projects</h4>
 		</div>		
 	</div>
 	<div class="col-md-9" id="rightpanel">
+	<hr>
 		<div class="projectscontent">
 		<ul ng-repeat="task in tasks">
 			<li>{{task.title}}</li>

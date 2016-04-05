@@ -15,9 +15,6 @@ app.config(function($stateProvider, $urlRouterProvider){
 			projects: function(projectsService){
 				return projectsService.getProjects();
 			}
-			, tasks: function(projectsService){
-				return projectsService.getTasks();
-			}
 		}
 	})
 });

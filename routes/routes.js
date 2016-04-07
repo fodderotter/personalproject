@@ -6,7 +6,9 @@ module.exports = function(app){
 		.post(mainCtrl.postProjects);
 	app.route("/api/projects/:id")
 		.get(mainCtrl.getProjectById)
-	// 	.put(mainCtrl.putProject)
-	// 	.delete(mainCtrl.deleteProject);
+		.post(mainCtrl.postTaskById)
+		.delete(mainCtrl.deleteProject);
+	app.route("/api/tasks/:id")
+		.get(mainCtrl.getTaskById)
 }
 

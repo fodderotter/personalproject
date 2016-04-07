@@ -10,8 +10,8 @@ var Projects = new mongoose.Schema({
 	, desc: {type: String}
 	, tasks: [
 		{
-			type: Schema.Types.ObjectId,
-			ref: 'Tasks'
+			type: Schema.Types.ObjectId
+			, ref: "Tasks"
 		}
 	]
 })

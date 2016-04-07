@@ -1,21 +1,30 @@
 app.controller("projectsCtrl", function($scope, projectsService, projects){
 	$scope.projects = projects.data;
-	$scope.addProject = function(project){		
-		return projectsService.addProject(project);
-	}
-
-	$scope.loadProject = function(id){		
-		projectsService.getTasks(id).then(function(res){
-			console.log(res);
-			$scope.tasks = [];
-			$scope.tasks.push(res);
+	$scope.addProject = function(project){
+		projectsService.addProject(project).then(function(res){
+			$scope.projects = projects.data;
 		});
-		console.log($scope.tasks);
+		$scope.project = null;
 	}
+	
+	var activeProject;
 
-	// $scope.$watch("tasks", function(){
-	// 	console.log("tasks has changed: ", tasks)
-	// 	$scope.$apply();
-	// })	
+	$scope.deleteProject = function(id){
+		projectsService.deleteProject(id)
+	};
+	$scope.loadProject = function(id){		
+		activeProject = id;
+		projectsService.getTasks(id).then(function(res){
+			$scope.tasks=res;
+		});
+	}
+	$scope.addTask = function(task){
+		projectsService.addTask(activeProject, task).then(function(res){
+			projectsService.getTasks(activeProject).then(function(res){
+				$scope.tasks=res;
+			});
+			$scope.task = null;
+		})
+	}
 })
 

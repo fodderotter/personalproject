@@ -19,7 +19,15 @@
 	</div>
 	<div class="col-md-9" id="rightpanel">
 	<hr>
-		<div class="projectscontent">
+		<div class="projectscontent">		
+			<a ng-click="hide=!hide"><button class="addnew btn btn-default"><span class="glyphicon glyphicon-plus"></span></button></a>
+			<label>Start a New Task</label>
+			<form class="newTaskForm" ng-show="hide">
+					<input placeholder="Task Title" ng-model="task.title"/>
+					<input placeholder="Task Owner" ng-model="task.owner"/>
+					<input type="date" ng-model="task.doc"/>					
+					<button type="submit" class="submitform" ng-click="addTask(task)">Let's start!</button>
+			</form>
 		<ul ng-repeat="task in tasks">
 			<li>{{task.title}}</li>
 			<li>{{task.doc}}</li>

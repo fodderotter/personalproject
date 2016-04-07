@@ -50,6 +50,7 @@ a:hover {
 	display:flex;
 	flex-direction: column;
 	width: 200px;
+	color: black !important;
 }
 .submitform{
 	width: 100px;

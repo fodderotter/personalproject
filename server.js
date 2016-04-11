@@ -3,7 +3,7 @@ var   express = require('express')
 	, bodyParser = require('body-parser')
 	, cors = require('cors')
 	, mongoose = require('mongoose')
-	, port = 9000
+	, port = process.env.PORT || 9000
 	, mongoUri = 'mongodb://localhost:27017/projects'
     , morgan = require('morgan');
 app.use(bodyParser.json());

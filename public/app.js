@@ -15,6 +15,9 @@ app.config(function($stateProvider, $urlRouterProvider){
 			projects: function(projectsService){
 				return projectsService.getProjects();
 			}
+			, completed: function(projectsService){
+				return projectsService.getCompleted();
+			}
 		}
 	})
 });

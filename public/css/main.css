@@ -5,6 +5,28 @@
 	height: 90%;	
 	min-height: 750px
 }
+ul {
+	list-style: none;
+}
+.taskpanel{
+	border: 1px black solid;
+	border-radius: 15%;
+	width: 150px;
+	height: 150px;
+	padding:10px !important;
+}
+#rightpanel{
+/*	display:flex;
+	flex-flow: flex-wrap;*/
+	height: 90vh;
+	/*justify-content: flex-end;*/
+}
+.alltasks {
+	display: flex;
+	flex-flow: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+}
 a:visited{
 	color: black !important;
 }
@@ -61,10 +83,14 @@ a:hover {
 .projectslist{
 	margin-top: 20px;
 	margin-bottom: 30px;
+	color:black !important;
 }
 .projectscontent{
+	display:flex;
 	margin-top: 20px;
 	margin-bottom: 30px;
+	justify-content: flex-start;
+	align-content: flex-start;
 }
 .navbar-right {
 	margin-right: 200px !important;

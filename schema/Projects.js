@@ -14,6 +14,7 @@ var Projects = new mongoose.Schema({
 			, ref: "Tasks"
 		}
 	]
+	, status: {type: Boolean}
 })
 
 module.exports = mongoose.model("Projects", Projects);

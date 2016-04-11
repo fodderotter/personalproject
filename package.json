@@ -14,7 +14,8 @@
     "cors": "^2.7.1",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
-    "mongoose": "^4.4.10"
+    "mongoose": "^4.4.10",
+    "passport-facebook": "^2.1.0"
   },
   "devDependencies": {
     "morgan": "^1.7.0"

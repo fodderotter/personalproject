@@ -7,8 +7,10 @@ module.exports = function(app){
 	app.route("/api/projects/:id")
 		.get(mainCtrl.getProjectById)
 		.post(mainCtrl.postTaskById)
-		.delete(mainCtrl.deleteProject);
+		.delete(mainCtrl.deleteProject)
+		.put(mainCtrl.updateProjectStatus);
 	app.route("/api/tasks/:id")
 		.get(mainCtrl.getTaskById)
+		.delete(mainCtrl.deleteTaskById);
 }
 

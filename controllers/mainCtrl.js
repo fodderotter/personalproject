@@ -1,6 +1,6 @@
 var Projects = require("../schema/projects.js");
 var Task = require("../schema/Tasks.js");
-var Owner = require("../schema/Owner.js");
+// var Owner = require("../schema/Owner.js");
 
 module.exports = {
 	getProjects: function(req, res){
@@ -19,12 +19,27 @@ module.exports = {
 			res.send(response);
 		})		
 	}
+	, updateProjectStatus: function(req, res){
+		Projects.findByIdAndUpdate(req.params.id, {status: true}, function(err, response){
+			if (err) {
+				return res.status(500).send(err);
+			}					
+			res.send(response);
+		})
+	}
+	, deleteProject: function(req, res){
+		Projects.findByIdAndRemove(req.params.id, function(err, response){
+			if (err) {
+				return res.status(500).send(err);
+			}
+			res.send(response);			
+		})
+	}
 	, getProjectById: function(req, res){
 		Projects.findById({_id: req.params.id}).populate("tasks").exec(function(err, response){
 			if (err) {
 				return res.status(500).send(err);
 			}
-			// response.populate("tasks")
 			res.send(response)
 		})
 	}
@@ -51,15 +66,7 @@ module.exports = {
 			res.send(response);			
 		})
 	}
-	, deleteProject: function(req, res){
-		Projects.findByIdAndRemove(req.params.id, function(err, response){
-			if (err) {
-				return res.status(500).send(err);
-			}
-			res.send(response);			
-		})
-	}
-	, deleteTask: function(req, res){
+	, deleteTaskById: function(req, res){
 		Task.findByIdAndRemove(req.params.id, function(err, response){
 			if (err) {
 				return res.status(500).send(err);

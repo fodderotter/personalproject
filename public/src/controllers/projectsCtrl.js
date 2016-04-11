@@ -21,29 +21,36 @@ app.controller("projectsCtrl", function($scope, projectsService, projects, compl
 		$scope.project = null;
 	}		
 	$scope.deleteProject = function(id){
-
 		projectsService.deleteProject(id).then(function(res){
-			projectsService.getProjects().getCompleted().then(function(res){
+			projectsService.getProjects().then(function(res){
 				$scope.projects=res;
 			});
 		})
 	}
-	$scope.changeStatus = function(id){
-		projectsService.changeStatus(id).then(function(res){
-			projectsService.getProjects().then(function(res){
-				$scope.projects=res;
+	$scope.changeProjectStatus = function(id){
+		projectsService.changeProjectStatus(id).then(function(res){
+			projectsService.getCompleted().then(function(res){
+				projectsService.getProjects().then(function(res){
+					$scope.projects=res;
+				})
+				$scope.completed=res;
 			})
 		})
 	}
 	$scope.loadProject = function(id){		
 		activeProject = id;
 		projectsService.getProjectById(id).then(function(res){
-			console.log(res);
-			$scope.active = res.data.title;
+			var stored = new Date(res.data.doc);		
+			$scope.active = res.data;
+			$scope.active.doc = stored.toLocaleDateString();
 		})
-		console.log($scope.active)
 		projectsService.getTasks(id).then(function(res){
+			var docs = [];			
+			for(var i = 0; i < res.length; i++){				
+				res[i].doc = new Date(res[i].doc).toLocaleDateString();
+			}			
 			$scope.tasks=res;
+			console.log($scope.tasks)
 		});
 	}
 	$scope.addTask = function(task){
@@ -59,6 +66,15 @@ app.controller("projectsCtrl", function($scope, projectsService, projects, compl
 			projectsService.getTasks(activeProject).then(function(res){
 				$scope.tasks=res;
 			});
+		})
+	}
+	$scope.changeTaskStatus = function(id){
+		projectsService.changeTaskStatus(id).then(function(res){
+			console.log(res);
+			if(res.data.status===true){
+				document.getElementById('check').show = '!completedTask';
+			}		
+			// $scope.completed=res;
 		})
 	}
 })

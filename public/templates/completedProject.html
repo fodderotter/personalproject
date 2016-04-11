@@ -1,0 +1,12 @@
+<div>
+	<h1>{{project.data.title}}</h1>
+	<h3>Completed on {{project.data.doc}}</h3>
+			<div class="alltasks">
+				<ul ng-repeat="task in tasks" class="taskpanel">
+					<li>Task: {{task.title}}</li>
+					<li>Date Due: {{task.doc}}</li>
+					<li>Whose responsibility? {{task.owner}}</li>	
+					<i class="fa fa-check fa-3x" id="check" ng-show="completedTask"></i>				
+			</ul>
+		</div>	
+</div>

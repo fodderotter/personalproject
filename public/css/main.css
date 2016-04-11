@@ -11,9 +11,10 @@ ul {
 .taskpanel{
 	border: 1px black solid;
 	border-radius: 15%;
-	width: 300px;
-	height: 300px;
-	padding:10px !important;
+	width: 250px;
+	height: 250px;
+	padding:20px !important;
+	margin: 20px;
 }
 #rightpanel{
 /*	display:flex;

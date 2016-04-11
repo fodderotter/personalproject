@@ -11,6 +11,7 @@ module.exports = function(app){
 		.put(mainCtrl.updateProjectStatus);
 	app.route("/api/tasks/:id")
 		.get(mainCtrl.getTaskById)
-		.delete(mainCtrl.deleteTaskById);
+		.delete(mainCtrl.deleteTaskById)
+		.put(mainCtrl.changeTaskStatusById);
 }
 

@@ -33,7 +33,7 @@ app.service("projectsService", function($http, $state, $q){
 	this.deleteProject = function(id){
 		return $http.delete("/api/projects/" + id);
 	}
-	this.changeStatus = function(id){
+	this.changeProjectStatus = function(id){
 		return $http.put("/api/projects/" + id);
 	}
 	this.getTasks = function(id){
@@ -52,5 +52,8 @@ app.service("projectsService", function($http, $state, $q){
 	}
 	this.getProjectById = function(id){
 		return $http.get("/api/projects/"+id);
+	}
+	this.changeTaskStatus = function(id){
+		return $http.put("/api/tasks/"+id)
 	}
 })

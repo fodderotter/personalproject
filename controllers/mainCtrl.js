@@ -74,4 +74,12 @@ module.exports = {
 			res.send(response);
 		})
 	}
+	, changeTaskStatusById: function(req, res){
+		Task.findByIdAndUpdate(req.params.id, {status: true}, function(err, response){
+			if (err) {
+				return res.status(500).send(err);
+			}					
+			res.send(response);			
+		})
+	}
 }

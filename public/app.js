@@ -20,5 +20,16 @@ app.config(function($stateProvider, $urlRouterProvider){
 			}
 		}
 	})
+	.state("completed", {
+		templateUrl:"templates/completedProject.html"
+		, url:"/projects/:id"
+		, controller:"completedCtrl"
+		, resolve: {
+			current: function(projectsService, $stateParams){
+				console.log($stateParams)
+				return projectsService.getProjectById($stateParams.id);
+			}
+		}
+	})
 });
 

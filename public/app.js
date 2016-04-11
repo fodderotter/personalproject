@@ -31,5 +31,10 @@ app.config(function($stateProvider, $urlRouterProvider){
 			}
 		}
 	})
+	.state("login", {
+		templateUrl:"templates/login.html"
+		, url:"/login"
+		, controller:"loginCtrl"
+	})
 });
 

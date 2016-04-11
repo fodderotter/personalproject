@@ -3,16 +3,17 @@
 <head>
 	<title>prjkt</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="css/animate.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  	<link rel="stylesheet" type="text/css" href="css/animate.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
 
 <nav class="navbar navbar-inverse navbar-static-top navbar-main">
-  <!-- <a class="navbar-brand" ui-sref="home"><i class="fa fa-bar-chart fa-3x"></i></a>     -->
+  <a class="leftlink navbar-brand" ui-sref="home"><h2>Home</h2></a>
+  <!-- <i class="fa fa-bar-chart fa-3x"></i>    -->
     <ul class="nav navbar-nav navbar-right">
-      <li><a ui-sref="projects" class="link">Projects</a></li>
+      <li><a ui-sref="projects"><h3 class="rightlink">Projects</h3></a></li>
     </ul>
 </nav>
 
@@ -39,6 +40,7 @@
 <script src="src/controllers/projectsCtrl.js"></script>
 <script src="src/controllers/homeCtrl.js"></script>
 <script src="src/controllers/completedCtrl.js"></script>
+<script src="src/controllers/loginCtrl.js"></script>
 <script src="src/services/projectsService.js"></script>
 <!-- <script src="src/jquery.js"></script> -->
 </html>

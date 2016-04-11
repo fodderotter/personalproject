@@ -12,7 +12,7 @@
 			</form>
 			<h4 id="ongoing">Ongoing projects</h4>
 			<ul ng-repeat="project in projects track by $index" id="listofprojects">
-				<li><a ng-click="loadProject(project._id)">{{project.title}}</a></li>	
+				<li><a ng-click="loadProject(project._id)" id="click">{{project.title}}</a></li>	
 				<button ng-click="yes=!yes" class="deleteProject">Delete</button>					
 				<button ng-click="changeProjectStatus(project._id)" class="changeProjectStatus">Completed</button>
 				<br><br>
@@ -42,7 +42,7 @@
 			</form>
 		</div>
 		<div class="alltasks">
-			<ul ng-repeat="task in tasks" class="taskpanel">
+			<ul ng-repeat="task in tasks" class="taskpanel animated slideInRight">
 				<li>Task: {{task.title}}</li>
 				<li>Date Due: {{task.doc}}</li>
 				<li>Whose responsibility? {{task.owner}}</li>

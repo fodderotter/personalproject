@@ -6,6 +6,26 @@
 	height: 90%;	
 	min-height: 750px
 }
+.completedbody{
+	text-align: left;
+	background: linear-gradient(to bottom right, #30C9E9, #B2FFF8);
+	background-size: cover;
+	height: 90%;	
+	min-height: 750px
+}
+.completedtext{
+	margin-left: 100px;
+	margin-right: 100px;
+}
+.completedheader{
+	margin: 0;
+	padding-top: 50px;
+	text-align: center;
+}
+.fixed-bottom{
+	position: absolute;
+	bottom:0;
+}
 ul {
 	list-style: none;
 }
@@ -145,4 +165,28 @@ a:hover {
 .navbar-main {
 	background-color: transparent !important;
 	border-bottom: none !important;
+}
+.slide {
+    -webkit-transition: -webkit-transform .7s ease-in-out;
+    -moz-transition: -moz-transform .7s ease-in-out;
+    -o-transition: -o-transform .7s ease-in-out;
+    transition: transform .7s ease-in-out;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.slide.ng-enter {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.slide.ng-enter.ng-enter-active, .slide.ng-leave {
+    position: absolute;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.slide.ng-leave.ng-leave-active {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
 }

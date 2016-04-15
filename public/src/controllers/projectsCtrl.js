@@ -48,9 +48,9 @@ app.controller("projectsCtrl", function($scope, projectsService, projects, compl
 			var docs = [];			
 			for(var i = 0; i < res.length; i++){				
 				res[i].doc = new Date(res[i].doc).toLocaleDateString();
-				if(res[i].status === true){
-					document.get
-				}
+				// if(res[i].status === true){
+				// 	// document.getElementById("check").style.visibility = "visible"
+				// }
 			}			
 			$scope.tasks=res;			
 		});
@@ -58,6 +58,10 @@ app.controller("projectsCtrl", function($scope, projectsService, projects, compl
 	$scope.addTask = function(task){
 		projectsService.addTask(activeProject, task).then(function(res){
 			projectsService.getTasks(activeProject).then(function(res){
+				var docs = [];			
+					for(var i = 0; i < res.length; i++){
+						res[i].doc = new Date(res[i].doc).toLocaleDateString();
+					}
 				$scope.tasks=res;
 			});
 			$scope.task = null;

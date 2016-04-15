@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
   	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/anim-in-out.css">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -13,18 +14,18 @@
   <a class="leftlink navbar-brand" ui-sref="home"><h2>Home</h2></a>
   <!-- <i class="fa fa-bar-chart fa-3x"></i>    -->
     <ul class="nav navbar-nav navbar-right">
-      <li><a ui-sref="projects"><h3 class="rightlink">Projects</h3></a></li>
+      <li><a ui-sref="login"><h3 class="rightlink">Projects</h3></a></li>
     </ul>
 </nav>
 
-<ui-view></ui-view>
+<ui-view class="anim-in-out" data-anim-in-speed="1000" data-anim-out-speed="0"></ui-view>
 
-<footer id="fixed-bottom">
+<footer class="fixed-bottom">
     <div class="container">
         <div class="row">
             <div class="col-lg-12" id="foot">
                 <ul class="list-inline">
-        			<li class="copyright text-muted small">Copyright © FodderOtter 2016. All Rights Reserved</li>
+        			<li class="copyright text-muted small">Copyright © FodderOtter 2016. All Rights Reserved l o l I'll change this later zzzzzz</li>
                 </ul>
             </div>
         </div>
@@ -33,14 +34,14 @@
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
-<!-- <script src="https://code.jquery.com/jquery-2.2.0.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
 <script src="app.js"></script>
 <script src="src/controllers/projectsCtrl.js"></script>
 <script src="src/controllers/homeCtrl.js"></script>
 <script src="src/controllers/completedCtrl.js"></script>
 <script src="src/controllers/loginCtrl.js"></script>
 <script src="src/services/projectsService.js"></script>
-<!-- <script src="src/jquery.js"></script> -->
+<script src="src/anim-in-out.js"></script>
 </html>

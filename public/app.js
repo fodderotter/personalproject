@@ -1,4 +1,4 @@
-var app = angular.module("PMapp", ["ui.router"]);
+var app = angular.module("PMapp", ['ngAnimate', 'ui.router', 'anim-in-out']);
 app.config(function($stateProvider, $urlRouterProvider){
 	$urlRouterProvider.otherwise("/");
 	$stateProvider
@@ -26,7 +26,6 @@ app.config(function($stateProvider, $urlRouterProvider){
 		, controller:"completedCtrl"
 		, resolve: {
 			current: function(projectsService, $stateParams){
-				console.log($stateParams)
 				return projectsService.getProjectById($stateParams.id);
 			}
 		}

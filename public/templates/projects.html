@@ -1,4 +1,4 @@
-<div class="projectsbody container-full">
+<div class="projectsbody container-full anim-slide-right">
 	<div class="col-md-2" id="leftpanel">
 		<div class="projectslist">
 			<a ng-click="show=!show"><button class="addnew btn btn-default"><span class="glyphicon glyphicon-plus"></span></button></a>
@@ -7,8 +7,15 @@
 					<input placeholder="Project Title" ng-model="project.title"/>
 					<input placeholder="Project Owner" ng-model="project.owner"/>
 					<input type="date" ng-model="project.doc"/>
+					<select>
+						<option value="lol" disabled>Primary team</option>
+						<option value="Devs">Devs</option>
+						<option value="Business Analysis">Business Analysis</option>
+					  	<option value="Project Management">Project Management</option>					  	
+					  	<option value="Other">Other</option>
+					</select>
 					<textarea placeholder="Description" ng-model="project.description"></textarea>
-					<button type="submit" class="submitform" ng-click="addProject(project)">Let's start!</button>
+					<button type="submit" class="submitform" ng-click="addProject(project)">Click me</button>
 			</form>
 			<h4 id="ongoing">Ongoing projects</h4>
 			<ul ng-repeat="project in projects track by $index" id="listofprojects">
@@ -42,7 +49,7 @@
 			</form>
 		</div>
 		<div class="alltasks">
-			<ul ng-repeat="task in tasks" class="taskpanel animated slideInRight">
+			<ul ng-repeat="task in tasks" class="taskpanel">
 				<li>Task: {{task.title}}</li>
 				<li>Date Due: {{task.doc}}</li>
 				<li>Whose responsibility? {{task.owner}}</li>
@@ -54,7 +61,7 @@
 					<button ng-click="deleteTask(task._id)">Yes</button>
 					<button ng-click="yes=!yes">No</button>
 				</form>
-				<i class="fa fa-check fa-3x" id="check" ng-show="completedTask"></i>
+				<i class="fa fa-check fa-3x" id="check" ng-hide="completedTask"></i>
 				<!-- <button ng-click="deleteTask(task._id)">delete</button> -->
 			</ul>
 		</div>	

@@ -3,9 +3,9 @@ var   express = require('express')
 	, bodyParser = require('body-parser')
 	, cors = require('cors')
 	, mongoose = require('mongoose')
-	, port = process.env.PORT || 80
-	// , mongoUri = "mongodb://heroku_mn11f7hq:abcd1234@ds021010.mlab.com:21010/heroku_mn11f7hq"
-	, mongoUri = 'mongodb://localhost:27017/projects'
+	// , port = process.env.PORT || 80
+	, mongoUri = "mongodb://fodderotter:qQ7rjbDwiK3T@ds021010.mlab.com:21010/heroku_mn11f7hq"
+	// , mongoUri = 'mongodb://localhost:27017/projects'
     , morgan = require('morgan');
 
 

@@ -3,10 +3,10 @@ var   express = require('express')
 	, bodyParser = require('body-parser')
 	, cors = require('cors')
 	, mongoose = require('mongoose')
-	, port = process.env.PORT || 80
+	, port = process.env.PORT || 8080
 	// , mongoUri = "mongodb://heroku_mn11f7hq:ac1e2lkvktjemhd26ulm2hnrvd@ds021010.mlab.com:21010/heroku_mn11f7hq"
-	// , mongoUri = 'mongodb://localhost:27017/projects'
-    , morgan = require('morgan');
+	, mongoUri = 'mongodb://localhost:27017/projects'
+  , morgan = require('morgan');
 
 
 app.use(bodyParser.json());

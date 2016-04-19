@@ -3,8 +3,8 @@ var   express = require('express')
 	, bodyParser = require('body-parser')
 	, cors = require('cors')
 	, mongoose = require('mongoose')
-	// , port = process.env.PORT || 80
-	, mongoUri = "mongodb://heroku_mn11f7hq:ac1e2lkvktjemhd26ulm2hnrvd@ds021010.mlab.com:21010/heroku_mn11f7hq"
+	, port = process.env.PORT || 80
+	// , mongoUri = "mongodb://heroku_mn11f7hq:ac1e2lkvktjemhd26ulm2hnrvd@ds021010.mlab.com:21010/heroku_mn11f7hq"
 	// , mongoUri = 'mongodb://localhost:27017/projects'
     , morgan = require('morgan');
 
